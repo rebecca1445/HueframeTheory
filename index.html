@@ -55,6 +55,18 @@
             font-weight: bold;
             letter-spacing: -1px;
         }
+        .logo img {
+            height: 32px;
+            width: auto;
+            transition: opacity 0.3s ease;
+            .logo img: hover {
+            opacity: 0.8;
+        }
+
+        /* Fallback for when no logo image is provided */
+        .logo-text {
+            display: inline;
+        }
 
         .nav-links {
             display: flex;
@@ -97,6 +109,7 @@
             justify-content: center;
             position: relative;
             overflow: hidden;
+            padding-top: 100px;
         }
 
         .hero-content {
@@ -285,7 +298,7 @@
         }
 
         .scroll-indicator::after {
-            content: '';
+            content: 'test';
             position: absolute;
             top: 0;
             left: -1px;
