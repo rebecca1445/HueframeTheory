@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Digital Designer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: all 0.1s ease;
+            mix-blend-mode: difference;
+        }
+
+        .cursor.hover {
+            transform: scale(1.5);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 30px 50px;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: -1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: opacity 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.7;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -5px;
+            left: 0;
+            background: #ffffff;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 1200px;
+            padding: 0 50px;
+        }
+
+        .hero-title {
+            font-size: clamp(60px, 8vw, 120px);
+            font-weight: 300;
+            letter-spacing: -3px;
+            line-height: 0.9;
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s ease forwards 0.5s;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: #888;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 60px;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 0.7s;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 80px;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 0.9s;
+        }
+
+        .service-item {
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .service-item h3 {
+            font-size: 16px;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            color: #ffffff;
+        }
+
+        .service-item p {
+            font-size: 14px;
+            color: #888;
+            line-height: 1.8;
+        }
+
+        .section {
+            padding: 150px 50px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 60px;
+            font-weight: 300;
+            letter-spacing: -2px;
+            margin-bottom: 80px;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .section-title.animate {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 1s ease;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 100px;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #ccc;
+        }
+
+        .about-text h3 {
+            font-size: 24px;
+            color: #ffffff;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .skill-item {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .skill-name {
+            font-size: 16px;
+            color: #ffffff;
+            letter-spacing: 1px;
+        }
+
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .floating-dot {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-dot:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-dot:nth-child(2) {
+            top: 60%;
+            right: 20%;
+            animation-delay: 2s;
+        }
+
+        .floating-dot:nth-child(3) {
+            bottom: 30%;
+            left: 30%;
+            animation-delay: 4s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(120deg); }
+            66% { transform: translateY(10px) rotate(240deg); }
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.3);
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 1.2s;
+        }
+
+        .scroll-indicator::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -1px;
+            width: 3px;
+            height: 20px;
+            background: #ffffff;
+            animation: scrollMove 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollMove {
+            0%, 100% { transform: translateY(0); opacity: 1; }
+            50% { transform: translateY(40px); opacity: 0.3; }
+        }
+
+        .zoom-window {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 300px;
+            height: 200px;
+            transform: translate(-50%, -50%) scale(0.1);
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            z-index: 500;
+            opacity: 0;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            backdrop-filter: blur(20px);
+            overflow: hidden;
+        }
+
+        .zoom-window.active {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .zoom-window::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            width: 12px;
+            height: 12px;
+            background: #ff5f56;
+            border-radius: 50%;
+            box-shadow: 18px 0 0 #ffbd2e, 36px 0 0 #27ca3f;
+        }
+
+        .zoom-window-content {
+            padding: 50px 30px 30px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .zoom-window-text {
+            font-size: 16px;
+            color: #ffffff;
+            line-height: 1.6;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease 0.3s;
+        }
+
+        .zoom-window.active .zoom-window-text {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .photo-stack {
+            position: relative;
+            height: 600px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 100px 0;
+        }
+
+        .photo-item {
+            position: absolute;
+            width: 300px;
+            height: 400px;
+            background: linear-gradient(45deg, #333, #666);
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transform: translateY(100px) rotate(0deg) scale(0.8);
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+            overflow: hidden;
+        }
+
+        .photo-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.1) 0%,
+                rgba(255, 255, 255, 0.05) 50%,
+                rgba(0, 0, 0, 0.1) 100%);
+            border-radius: 15px;
+        }
+
+        .photo-item.stacked-1 {
+            transform: translateY(0) rotate(-3deg) scale(0.95);
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .photo-item.stacked-2 {
+            transform: translateY(-10px) rotate(2deg) scale(1);
+            opacity: 1;
+            z-index: 2;
+        }
+
+        .photo-item.stacked-3 {
+            transform: translateY(-20px) rotate(-1deg) scale(1.05);
+            opacity: 1;
+            z-index: 3;
+        }
+
+        .photo-content {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            right: 30px;
+            color: white;
+            z-index: 10;
+        }
+
+        .photo-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .photo-subtitle {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .work-section {
+            padding: 200px 50px;
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .text-reveal {
+            overflow: hidden;
+        }
+
+        .text-reveal span {
+            display: block;
+            transform: translateY(100%);
+            transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .text-reveal.animate span {
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 20px 30px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-content {
+                padding: 0 30px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            
+            .section {
+                padding: 100px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="zoom-window">
+        <div class="zoom-window-content">
+            <div class="zoom-window-text">
+                Crafting digital experiences<br>with precision and creativity
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <nav>
+            <div class="logo">Your Name</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="floating-elements">
+            <div class="floating-dot"></div>
+            <div class="floating-dot"></div>
+            <div class="floating-dot"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="text-reveal">
+                <span>
+                    <h1 class="hero-title">Synthesize Approaches,<br>Refined Digital Experiences.</h1>
+                </span>
+            </div>
+            <p class="hero-subtitle">For Vision and Brand</p>
+            
+            <div class="services-grid">
+                <div class="service-item">
+                    <h3>Motion Design</h3>
+                    <p>Creating purposeful animations that effectively convey messages through smooth, impactful movement.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Web Development</h3>
+                    <p>Building usability-focused experiences with performance optimization and accessibility in mind.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Visual Design</h3>
+                    <p>Crafting cohesive visual identities that embody brand vision through typography and layout.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Art Direction</h3>
+                    <p>Leading creative strategy to ensure brand values are reflected throughout the design process.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator"></div>
+    </section>
+
+    <section class="section work-section" id="work">
+        <h2 class="section-title">Selected Work</h2>
+        <div class="photo-stack">
+            <div class="photo-item" data-stack="1">
+                <div class="photo-content">
+                    <div class="photo-title">Motion Project</div>
+                    <div class="photo-subtitle">Brand Animation</div>
+                </div>
+            </div>
+            <div class="photo-item" data-stack="2">
+                <div class="photo-content">
+                    <div class="photo-title">Web Experience</div>
+                    <div class="photo-subtitle">Interactive Design</div>
+                </div>
+            </div>
+            <div class="photo-item" data-stack="3">
+                <div class="photo-content">
+                    <div class="photo-title">Visual Identity</div>
+                    <div class="photo-subtitle">Complete Rebrand</div>
+                </div>
+            </div>
+        </div>
+    </section>
+        <h2 class="section-title">Hello</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>I'm Your Name.<br>Motion Designer and Web Developer.</h3>
+                <p>I work in digital design and web development, with motion design at the core. I pursue creating experiences that ignite impact and emotion, like a blue flame in the heart.</p>
+                <p>I design and create purposeful animations to effectively convey messages in both video and websites. Specializing in motion graphics, I focus on the flow and smoothness of movement, balancing visual impact with intuitive usability.</p>
+            </div>
+            <div class="skills-list">
+                <div class="skill-item">
+                    <div class="skill-name">Motion Graphics</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Web Development</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">UI/UX Design</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Art Direction</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Brand Strategy</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Creative Development</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Custom cursor
+        const cursor = document.querySelector('.cursor');
+        const links = document.querySelectorAll('a, .service-item');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        links.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                cursor.classList.add('hover');
+            });
+            link.addEventListener('mouseleave', () => {
+                cursor.classList.remove('hover');
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section-title, .text-reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(10, 10, 10, 0.9)';
+            } else {
+                header.style.background = 'transparent';
+            }
+        });
+
+        // Parallax effect for floating elements
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelectorAll('.floating-dot');
+            
+            parallax.forEach((element, index) => {
+                const speed = (index + 1) * 0.1;
+                element.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+
+        // Zoom window effect
+        const zoomWindow = document.querySelector('.zoom-window');
+        let zoomTriggered = false;
+
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const windowHeight = window.innerHeight;
+            
+            // Zoom window activation
+            if (scrolled > windowHeight * 0.3 && scrolled < windowHeight * 1.2 && !zoomTriggered) {
+                zoomWindow.classList.add('active');
+                zoomTriggered = true;
+            } else if (scrolled > windowHeight * 1.2 && zoomTriggered) {
+                zoomWindow.classList.remove('active');
+                zoomTriggered = false;
+            }
+        });
+
+        // Photo stacking animation
+        const photoItems = document.querySelectorAll('.photo-item');
+        const photoStack = document.querySelector('.photo-stack');
+
+        const stackObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const stackItems = entry.target.querySelectorAll('.photo-item');
+                    
+                    stackItems.forEach((item, index) => {
+                        setTimeout(() => {
+                            item.classList.add(`stacked-${index + 1}`);
+                        }, index * 200);
+                    });
+                }
+            });
+        }, {
+            threshold: 0.5
+        });
+
+        if (photoStack) {
+            stackObserver.observe(photoStack);
+        }
+    </script>
+</body>
+</html>
