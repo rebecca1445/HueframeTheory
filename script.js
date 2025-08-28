@@ -1,12 +1,3 @@
-// Custom cursor
-const cursor = document.querySelector('.cursor');
-const links = document.querySelectorAll('a, .service-card, .content-card, .btn-primary, .btn-secondary');
-
-if (cursor) {
-    document.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
-    });
 
     links.forEach(link => {
         link.addEventListener('mouseenter', () => {
@@ -38,10 +29,10 @@ if (zoomWindow) {
         const windowHeight = window.innerHeight;
         
         // Zoom window activation
-        if (scrolled > windowHeight * 0.7 && scrolled < windowHeight * 1.8 && !zoomTriggered) {
+        if (scrolled > windowHeight * 1.2 && scrolled < windowHeight * 2.5 && !zoomTriggered) {
             zoomWindow.classList.add('active');
             zoomTriggered = true;
-        } else if (scrolled > windowHeight * 1.8 && zoomTriggered) {
+        } else if (scrolled > windowHeight * 2.5 || zoomTriggered) {
             zoomWindow.classList.remove('active');
             zoomTriggered = false;
         }
