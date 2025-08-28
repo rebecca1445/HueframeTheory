@@ -346,27 +346,6 @@ nav {
     transform: translateY(0);
 }
 
-.scroll-indicator {
-    position: fixed;
-    bottom: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 1px;
-    height: 60px;
-    background: rgba(255, 255, 255, 0.3);
-    opacity: 0;
-    animation: fadeInUp 1s ease forwards 1.2s;
-}
-
-.scroll-indicator::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -1px;
-    width: 3px;
-    height: 20px;
-    background: #ffffff;
-    animation: scrollMove 2s ease-in-out infinite;
 }
 
 /* Content Grid */
