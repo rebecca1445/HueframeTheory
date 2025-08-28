@@ -29,10 +29,10 @@ if (zoomWindow) {
         const windowHeight = window.innerHeight;
         
         // Zoom window activation
-        if (scrolled > windowHeight * .9 && scrolled < windowHeight * 1.9 && !zoomTriggered) {
+        if (scrolled > windowHeight * .7 && scrolled < windowHeight * 1.2 && !zoomTriggered) {
             zoomWindow.classList.add('active');
             zoomTriggered = true;
-        } else if (scrolled > windowHeight * 1.9 && zoomTriggered) {
+        } else if (scrolled > windowHeight * 1.2 && zoomTriggered) {
             zoomWindow.classList.remove('active');
             zoomTriggered = false;
         }
@@ -116,7 +116,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const dontTouchBtn = document.getElementById('dontTouchBtn');
     
     if (dontTouchBtn) {
+        console.log('Button found!'); // Debug line
         dontTouchBtn.addEventListener('click', () => {
+            console.log('Button clicked!'); // Debug line
             createConfetti();
             
             // Change button text temporarily
@@ -129,9 +131,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 dontTouchBtn.style.background = "linear-gradient(45deg, #ff6b6b, #ee5a52)";
             }, 3000);
         });
+    } else {
+        console.log('Button not found!'); // Debug line
     }
     
     function createConfetti() {
+        console.log('Creating confetti!'); // Debug line
         const colors = ['#f39c12', '#e74c3c', '#9b59b6', '#3498db', '#2ecc71', '#f1c40f', '#e67e22'];
         const confettiCount = 100;
         
