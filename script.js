@@ -29,10 +29,10 @@ if (zoomWindow) {
         const windowHeight = window.innerHeight;
         
         // Zoom window activation
-        if (scrolled > windowHeight * 1.2 && scrolled < windowHeight * 2.5 && !zoomTriggered) {
+        if (scrolled > windowHeight * .9 && scrolled < windowHeight * 1.9 && !zoomTriggered) {
             zoomWindow.classList.add('active');
             zoomTriggered = true;
-        } else if (scrolled > windowHeight * 2.5 || zoomTriggered) {
+        } else if (scrolled > windowHeight * 1.9 && zoomTriggered) {
             zoomWindow.classList.remove('active');
             zoomTriggered = false;
         }
