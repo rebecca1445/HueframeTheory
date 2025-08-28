@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Hueframe Theory</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="cursor"></div>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="Hueframe Theory Logo" onerror="this.style.display='none'">
+                <span class="logo-text">Hueframe Theory</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="page">
+        <div class="container">
+            <h1 class="page-title">Hello</h1>
+            <p class="page-subtitle">We are Hueframe Theory</p>
+
+            <div class="content-grid two-col">
+                <div class="content-card">
+                    <h3>Our Story</h3>
+                    <p>I'm Hueframe Theory, Motion Designer and Web Developer. I work in digital design and web development, with motion design at the core. I pursue creating experiences that ignite impact and emotion, like a blue flame in the heart.</p>
+                    <br>
+                    <p>I design and create purposeful animations to effectively convey messages in both video and websites. Specializing in motion graphics, I focus on the flow and smoothness of movement, balancing visual impact with intuitive usability.</p>
+                </div>
+
+                <div class="skills-section">
+                    <h3 style="color: #ffffff; margin-bottom: 30px; font-size: 24px;">Core Expertise</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <h4>Motion Graphics</h4>
+                            <p>Advanced animation techniques</p>
+                        </div>
+                        <div class="skill-item">
+                            <h4>Web Development</h4>
+                            <p>Modern frontend technologies</p>
+                        </div>
+                        <div class="skill-item">
+                            <h4>UI/UX Design</h4>
+                            <p>User-centered design principles</p>
+                        </div>
+                        <div class="skill-item">
+                            <h4>Art Direction</h4>
+                            <p>Creative vision and strategy</p>
+                        </div>
+                        <div class="skill-item">
+                            <h4>Brand Strategy</h4>
+                            <p>Identity development and positioning</p>
+                        </div>
+                        <div class="skill-item">
+                            <h4>Creative Development</h4>
+                            <p>Interactive experiences and prototypes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="philosophy-section">
+                <div class="content-card">
+                    <h3>Our Philosophy</h3>
+                    <p>We believe that great digital experiences are born from the intersection of logic and intuition. Our approach synthesizes strategic thinking with creative exploration, always keeping the end user at the center of our process.</p>
+                    <br>
+                    <p>Every project is an opportunity to push boundaries, challenge conventions, and create something that not only looks beautiful but serves a meaningful purpose in the digital landscape.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <style>
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+        
+        .skill-item {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border-left: 3px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .skill-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-left-color: #ffffff;
+        }
+        
+        .skill-item h4 {
+            color: #ffffff;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        
+        .skill-item p {
+            color: #888;
+            font-size: 14px;
+        }
+        
+        .philosophy-section {
+            margin-top: 60px;
+        }
+        
+        @media (max-width: 768px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>
