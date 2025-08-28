@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Hueframe Theory</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="cursor"></div>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="Hueframe Theory Logo" onerror="this.style.display='none'">
+                <span class="logo-text">Hueframe Theory</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="page">
+        <div class="container">
+            <h1 class="page-title">Services</h1>
+            <p class="page-subtitle">Comprehensive digital solutions for modern brands</p>
+
+            <div class="services-detailed">
+                <div class="service-section">
+                    <div class="service-header">
+                        <h2>Motion Design</h2>
+                        <span class="service-number">01</span>
+                    </div>
+                    <div class="service-content">
+                        <p>Creating purposeful animations that effectively convey messages through smooth, impactful movement. We specialize in motion graphics that balance visual impact with intuitive usability.</p>
+                        <div class="service-features">
+                            <div class="feature">Brand Animation</div>
+                            <div class="feature">UI/UX Microinteractions</div>
+                            <div class="feature">Explainer Videos</div>
+                            <div class="feature">Logo Animation</div>
+                            <div class="feature">Kinetic Typography</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-section">
+                    <div class="service-header">
+                        <h2>Web Development</h2>
+                        <span class="service-number">02</span>
+                    </div>
+                    <div class="service-content">
+                        <p>Building usability-focused experiences with performance optimization and accessibility in mind. We provide comprehensive development across various areas including modern frameworks and CMS solutions.</p>
+                        <div class="service-features">
+                            <div class="feature">Responsive Design</div>
+                            <div class="feature">Performance Optimization</div>
+                            <div class="feature">CMS Development</div>
+                            <div class="feature">E-commerce Solutions</div>
+                            <div class="feature">Progressive Web Apps</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-section">
+                    <div class="service-header">
+                        <h2>Visual Design</h2>
+                        <span class="service-number">03</span>
+                    </div>
+                    <div class="service-content">
+                        <p>Crafting cohesive visual identities that embody brand vision through strategic use of typography, color palettes, and layout. We create designs that are both engaging and memorable.</p>
+                        <div class="service-features">
+                            <div class="feature">Brand Identity</div>
+                            <div class="feature">UI/UX Design</div>
+                            <div class="feature">Print Design</div>
+                            <div class="feature">Digital Assets</div>
+                            <div class="feature">Style Guides</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-section">
+                    <div class="service-header">
+                        <h2>Art Direction</h2>
+                        <span class="service-number">04</span>
+                    </div>
+                    <div class="service-content">
+                        <p>Leading creative strategy to ensure brand values are reflected throughout the design process. From concept to final output, we manage each stage to deliver cohesive and impactful creative work.</p>
+                        <div class="service-features">
+                            <div class="feature">Creative Strategy</div>
+                            <div class="feature">Campaign Development</div>
+                            <div class="feature">Brand Positioning</div>
+                            <div class="feature">Creative Consultation</div>
+                            <div class="feature">Project Management</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-section">
+                <h2>Our Process</h2>
+                <div class="process-grid">
+                    <div class="process-step">
+                        <div class="step-number">01</div>
+                        <h3>Discovery</h3>
+                        <p>Understanding your brand, goals, and target audience to create a strategic foundation for the project.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">02</div>
+                        <h3>Concept</h3>
+                        <p>Developing creative concepts and visual directions that align with your brand vision and objectives.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">03</div>
+                        <h3>Design</h3>
+                        <p>Bringing concepts to life through detailed design work, prototyping, and iterative refinement.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">04</div>
+                        <h3>Delivery</h3>
+                        <p>Final implementation, testing, and launch with comprehensive documentation and support.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <style>
+        .services-detailed {
+            margin: 80px 0;
+        }
+
+        .service-section {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 60px 0;
+            transition: all 0.3s ease;
+        }
+
+        .service-section:last-child {
+            border-bottom: none;
+        }
+
+        .service-section:hover {
+            background: rgba(255, 255, 255, 0.01);
+        }
+
+        .service-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .service-header h2 {
+            font-size: 42px;
+            font-weight: 300;
+            color: #ffffff;
+            letter-spacing: -1px;
+        }
+
+        .service-number {
+            font-size: 20px;
+            color: #666;
+            font-weight: bold;
+            font-family: monospace;
+        }
+
+        .service-content {
+            max-width: 800px;
+        }
+
+        .service-content p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #ccc;
+            margin-bottom: 30px;
+        }
+
+        .service-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .feature {
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            font-size: 14px;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .feature:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .process-section {
+            margin-top: 120px;
+            padding-top: 80px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .process-section h2 {
+            font-size: 48px;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 80px;
+            color: #ffffff;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .process-step:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .step-number {
+            font-size: 24px;
+            font-weight: bold;
+            color: #666;
+            margin-bottom: 20px;
+            font-family: monospace;
+        }
+
+        .process-step h3 {
+            font-size: 24px;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .process-step p {
+            color: #888;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .service-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .service-header h2 {
+                font-size: 32px;
+            }
+
+            .service-content p {
+                font-size: 16px;
+            }
+
+            .process-section h2 {
+                font-size: 36px;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .service-features {
+                justify-content: flex-start;
+            }
+        }
+    </style>
+</body>
+</html>
