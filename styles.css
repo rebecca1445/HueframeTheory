@@ -503,4 +503,41 @@ nav {
         flex-direction: column;
         align-items: center;
     }
+    .dont-touch-container {
+        margin-top: 40px;
+        text-align: center;
+    }
+    .dont-touch-btn {
+    padding: 20px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.dont-touch-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+    background: linear-gradient(45deg, #ff5252, #f44336);
+}
+
+.dont-touch-btn:active {
+    transform: scale(0.95);
+}
+
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background: #f39c12;
+    z-index: 9999;
+    pointer-events: none;
+}
 }
