@@ -111,6 +111,68 @@ const handlePageTransition = (url) => {
     }, 200);
 };
 
+// Don't Touch Button Confetti Effect
+document.addEventListener('DOMContentLoaded', () => {
+    const dontTouchBtn = document.getElementById('dontTouchBtn');
+    
+    if (dontTouchBtn) {
+        dontTouchBtn.addEventListener('click', () => {
+            createConfetti();
+            
+            // Change button text temporarily
+            const originalText = dontTouchBtn.textContent;
+            dontTouchBtn.textContent = "I Told You So!";
+            dontTouchBtn.style.background = "linear-gradient(45deg, #4CAF50, #45a049)";
+            
+            setTimeout(() => {
+                dontTouchBtn.textContent = originalText;
+                dontTouchBtn.style.background = "linear-gradient(45deg, #ff6b6b, #ee5a52)";
+            }, 3000);
+        });
+    }
+    
+    function createConfetti() {
+        const colors = ['#f39c12', '#e74c3c', '#9b59b6', '#3498db', '#2ecc71', '#f1c40f', '#e67e22'];
+        const confettiCount = 100;
+        
+        for (let i = 0; i < confettiCount; i++) {
+            setTimeout(() => {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDuration = (Math.random() * 2 + 1) + 's';
+                
+                // Random shapes
+                if (Math.random() > 0.5) {
+                    confetti.style.borderRadius = '50%';
+                }
+                
+                document.body.appendChild(confetti);
+                
+                // Animate the confetti falling
+                let pos = -10;
+                const speed = Math.random() * 5 + 2;
+                const swing = Math.random() * 2 - 1;
+                let swingPos = 0;
+                
+                const fall = setInterval(() => {
+                    pos += speed;
+                    swingPos += swing;
+                    confetti.style.top = pos + 'px';
+                    confetti.style.transform = `translateX(${Math.sin(swingPos * 0.1) * 20}px) rotate(${pos * 2}deg)`;
+                    
+                    if (pos > window.innerHeight) {
+                        clearInterval(fall);
+                        confetti.remove();
+                    }
+                }, 20);
+                
+            }, i * 20);
+        }
+    }
+});
+
 // Add transition effect to navigation links
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', (e) => {
