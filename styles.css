@@ -430,7 +430,7 @@ nav {
     transform: translateY(0);
 }
 
-/* Scroll Indicator */
+/* Scroll Indicator 
 .scroll-indicator {
     position: fixed;
     bottom: 50px;
@@ -453,6 +453,7 @@ nav {
     background: var(--accent-primary);
     animation: scrollMove 2s ease-in-out infinite;
 }
+*/
 
 /* Featured Work Section */
 .featured-work {
@@ -708,4 +709,42 @@ nav {
         grid-template-columns: 1fr;
         gap: 30px;
     }
+}
+/* Fix for dropdown/select styling */
+.form-group select {
+    background: rgba(139, 155, 142, 0.05);
+    border: 2px solid rgba(139, 155, 142, 0.2);
+    border-radius: 8px;
+    padding: 18px 20px;
+    color: var(--text-primary);
+    font-size: 16px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23B5A392' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 12px center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    padding-right: 40px;
+}
+
+.form-group select:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    background: rgba(139, 155, 142, 0.1);
+}
+
+/* Style the dropdown options */
+.form-group select option {
+    background: var(--background-dark);
+    color: var(--text-primary);
+    padding: 10px;
+    font-size: 14px;
+}
+
+/* For browsers that support it, ensure option text is visible */
+.form-group select option:checked,
+.form-group select option:hover {
+    background: var(--accent-primary);
+    color: var(--background-dark);
 }
