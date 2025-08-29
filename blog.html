@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Hueframe Theory</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="cursor"></div>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="Hueframe Theory Logo" onerror="this.style.display='none'">
+                <span class="logo-text">Hueframe Theory</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="page">
+        <div class="container">
+            <div class="floating-elements">
+                <div class="floating-dot"></div>
+                <div class="floating-dot"></div>
+                <div class="floating-dot"></div>
+            </div>
+
+            <h1 class="page-title">Blog</h1>
+            <p class="page-subtitle">Insights, trends, and behind-the-scenes stories from the world of design</p>
+
+            <div class="blog-filters">
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search articles..." id="searchInput">
+                </div>
+                <div class="category-filters">
+                    <button class="filter-btn active" data-category="all">All Posts</button>
+                    <button class="filter-btn" data-category="design">Design</button>
+                    <button class="filter-btn" data-category="development">Development</button>
+                    <button class="filter-btn" data-category="strategy">Strategy</button>
+                    <button class="filter-btn" data-category="tutorials">Tutorials</button>
+                </div>
+            </div>
+
+            <div class="blog-grid" id="blogGrid">
+                <article class="blog-card" data-category="design">
+                    <div class="blog-image">
+                        <div class="blog-placeholder">
+                            <span>Motion Design</span>
+                        </div>
+                        <div class="blog-date">Dec 15, 2024</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-category">Design</div>
+                        <h3>The Psychology of Motion in Web Design</h3>
+                        <p>Exploring how purposeful animation can guide user behavior and create emotional connections with your brand.</p>
+                        <div class="blog-meta">
+                            <span class="read-time">5 min read</span>
+                            <span class="blog-author">By Hueframe Theory</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="development">
+                    <div class="blog-image">
+                        <div class="blog-placeholder">
+                            <span>Web Development</span>
+                        </div>
+                        <div class="blog-date">Dec 10, 2024</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-category">Development</div>
+                        <h3>Building Performant Web Animations</h3>
+                        <p>A technical deep-dive into creating smooth, 60fps animations that don't compromise user experience.</p>
+                        <div class="blog-meta">
+                            <span class="read-time">8 min read</span>
+                            <span class="blog-author">By Hueframe Theory</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="strategy">
+                    <div class="blog-image">
+                        <div class="blog-placeholder">
+                            <span>Brand Strategy</span>
+                        </div>
+                        <div class="blog-date">Dec 5, 2024</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-category">Strategy</div>
+                        <h3>Why Your Brand Needs a Visual Identity System</h3>
+                        <p>Understanding the difference between a logo and a complete brand identity, and why consistency matters.</p>
+                        <div class="blog-meta">
+                            <span class="read-time">6 min read</span>
+                            <span class="blog-author">By Hueframe Theory</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="tutorials">
+                    <div class="blog-image">
+                        <div class="blog-placeholder">
+                            <span>Tutorial</span>
+                        </div>
+                        <div class="blog-date">Nov 28, 2024</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-category">Tutorials</div>
+                        <h3>Creating Micro-Interactions with CSS</h3>
+                        <p>Step-by-step guide to building subtle hover effects and transitions that enhance user engagement.</p>
+                        <div class="blog-meta">
+                            <span class="read-time">12 min read</span>
+                            <span class="blog-author">By Hueframe Theory</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="design">
+                    <div class="blog-image">
+                        <div class="blog-placeholder">
+                            <span>Design Trends</span>
+                        </div>
+                        <div class="blog-date">Nov 20, 2024</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-category">Design</div>
+                        <h3>Design Trends That Actually Matter in 2025</h3>
+                        <p>Cutting through the noise to identify design trends with real staying power and business impact.</p>
+                        <div class="blog-meta">
+                            <span class="read-time">7 min read</span>
+                            <span class="blog-author">By Hueframe Theory</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="development">
+                    <div class="blog-image">
+                        <div class="blog-placeholder">
+                            <span>Web Performance</span>
+                        </div>
+                        <div class="blog-date">Nov 15, 2024</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-category">Development</div>
+                        <h3>Optimizing Website Performance Without Sacrificing Design</h3>
+                        <p>Practical techniques for maintaining beautiful, interactive designs while achieving fast load times.</p>
+                        <div class="blog-meta">
+                            <span class="read-time">10 min read</span>
+                            <span class="blog-author">By Hueframe Theory</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="blog-pagination">
+                <button class="pagination-btn" disabled>Previous</button>
+                <div class="pagination-numbers">
+                    <button class="pagination-number active">1</button>
+                    <button class="pagination-number">2</button>
+                    <button class="pagination-number">3</button>
+                </div>
+                <button class="pagination-btn">Next</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <style>
+        .blog-filters {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 60px 0;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .search-container {
+            flex: 1;
+            max-width: 300px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px 20px;
+            background: rgba(139, 155, 142, 0.05);
+            border: 1px solid rgba(139, 155, 142, 0.2);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+            background: rgba(139, 155, 142, 0.1);
+        }
+
+        .search-input::placeholder {
+            color: var(--text-secondary);
+        }
+
+        .category-filters {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            background: transparent;
+            border: 1px solid rgba(139, 155, 142, 0.2);
+            border-radius: 25px;
+            color: var(--text-secondary);
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--accent-primary);
+            color: var(--background-dark);
+            border-color: var(--accent-primary);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .blog-card {
+            background: rgba(139, 155, 142, 0.05);
+            border: 1px solid rgba(139, 155, 142, 0.2);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .blog-card.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-primary);
+            background: rgba(139, 155, 142, 0.1);
+        }
+
+        .blog-image {
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--accent-secondary), var(--warm-brown));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--text-primary);
+            transition: transform 0.4s ease;
+        }
+
+        .blog-card:hover .blog-placeholder {
+            transform: scale(1.05);
+        }
+
+        .blog-date {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(26, 22, 18, 0.8);
+            color: var(--text-primary);
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .blog-content {
+            padding: 30px;
+        }
+
+        .blog-category {
+            display: inline-block;
+            background: var(--accent-primary);
+            color: var(--background-dark);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 15px;
+        }
+
+        .blog-card h3 {
+            font-size: 22px;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            font-weight: 400;
+            line-height: 1.4;
+        }
+
+        .blog-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .read-time {
+            font-weight: 500;
+        }
+
+        .blog-author {
+            opacity: 0.8;
+        }
+
+        .blog-pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 60px;
+        }
+
+        .pagination-btn {
+            padding: 12px 24px;
+            background: transparent;
+            border: 1px solid rgba(139, 155, 142, 0.2);
+            border-radius: 8px;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .pagination-btn:hover:not(:disabled) {
+            background: var(--accent-primary);
+            color: var(--background-dark);
+            border-color: var(--accent-primary);
+        }
+
+        .pagination-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .pagination-numbers {
+            display: flex;
+            gap: 10px;
+        }
+
+        .pagination-number {
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            border: 1px solid rgba(139, 155, 142, 0.2);
+            border-radius: 50%;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pagination-number:hover, .pagination-number.active {
+            background: var(--accent-primary);
+            color: var(--background-dark);
+            border-color: var(--accent-primary);
+        }
+
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        @media (max-width: 768px) {
+            .blog-filters {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 20px;
+            }
+
+            .search-container {
+                max-width: none;
+            }
+
+            .category-filters {
+                justify-content: center;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .blog-pagination {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .pagination-numbers {
+                order: -1;
+            }
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Blog filtering functionality
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const blogCards = document.querySelectorAll('.blog-card');
+            const searchInput = document.getElementById('searchInput');
+
+            // Filter by category
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active button
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const category = btn.dataset.category;
+                    
+                    blogCards.forEach(card => {
+                        if (category === 'all' || card.dataset.category === category) {
+                            card.style.display = 'block';
+                            setTimeout(() => card.classList.add('animate'), 100);
+                        } else {
+                            card.style.display = 'none';
+                            card.classList.remove('animate');
+                        }
+                    });
+                });
+            });
+
+            // Search functionality
+            searchInput.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+                
+                blogCards.forEach(card => {
+                    const title = card.querySelector('h3').textContent.toLowerCase();
+                    const description = card.querySelector('p').textContent.toLowerCase();
+                    const category = card.querySelector('.blog-category').textContent.toLowerCase();
+                    
+                    if (title.includes(searchTerm) || description.includes(searchTerm) || category.includes(searchTerm)) {
+                        card.style.display = 'block';
+                        setTimeout(() => card.classList.add('animate'), 100);
+                    } else {
+                        card.style.display = 'none';
+                        card.classList.remove('animate');
+                    }
+                });
+            });
+
+            // Initial animation for blog cards
+            setTimeout(() => {
+                blogCards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.classList.add('animate');
+                    }, index * 150);
+                });
+            }, 500);
+        });
+    </script>
+</body>
+</html>
