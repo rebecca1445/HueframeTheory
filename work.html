@@ -53,16 +53,19 @@
             </div>
 
             <div class="work-grid">
-                <div class="work-item">
-                    <div class="work-image">
-                        <div class="work-placeholder"></div>
-                    </div>
-                    <div class="work-info">
-                        <h3>Digital Transformation</h3>
-                        <p>Motion Design • Web Development</p>
-                        <span class="work-description">A comprehensive digital overhaul featuring custom animations and responsive design for a tech startup.</span>
-                    </div>
-                </div>
+    <a href="project-digital-transformation.html" class="project-link">
+        <div class="work-item">
+            <div class="work-image">
+                <div class="work-placeholder"></div>
+            </div>
+            <div class="work-info">
+                <h3>Digital Transformation</h3>
+                <p>Motion Design • Web Development</p>
+                <span class="work-description">A comprehensive digital overhaul featuring custom animations and responsive design for a tech startup.</span>
+            </div>
+        </div>
+    </a>
+</div>
 
                 <div class="work-item">
                     <div class="work-image">
@@ -308,7 +311,7 @@
                         stackItems.forEach((item, index) => {
                             setTimeout(() => {
                                 item.classList.add(`stacked-${index + 1}`);
-                            }, index * 200);
+                            }, index * 1000);
                         });
                     }
                 });
