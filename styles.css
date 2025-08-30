@@ -742,59 +742,62 @@ nav {
     font-size: 14px;
 }
 
-/* For browsers that support it, ensure option text is visible */
-.form-group select option:checked,
-.form-group select option:hover {
-    background: var(--accent-primary);
-    color: var(--background-dark);
-}
-
-/* Fix for work item links and remove default link styling */
-.work-item a,
-.project-link,
-.work-preview-item a {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-}
-
-/* Remove any default link styling from work items */
-.work-grid a,
-.work-preview-grid a {
+/* Force remove all link styling from work items */
+a {
     text-decoration: none !important;
     color: inherit !important;
 }
 
-/* Ensure work item styling is preserved */
-.work-item {
+a:visited,
+a:hover,
+a:active,
+a:focus {
+    text-decoration: none !important;
+    color: inherit !important;
+    outline: none !important;
+}
+
+/* Fix work preview items specifically */
+.work-preview-grid a,
+.work-preview-grid a:visited,
+.work-preview-grid a:hover,
+.work-preview-grid a:active {
+    text-decoration: none !important;
+    color: inherit !important;
+    border: none !important;
+    outline: none !important;
+}
+
+/* Remove the conflicting .work-item styles and replace with correct class */
+.work-preview-item {
     background: rgba(139, 155, 142, 0.05);
     border: 1px solid rgba(139, 155, 142, 0.2);
     border-radius: 15px;
     overflow: hidden;
     transition: all 0.4s ease;
     cursor: pointer;
+    text-decoration: none;
 }
 
-.work-item:hover {
+.work-preview-item:hover {
     transform: translateY(-10px);
     border-color: var(--accent-primary);
     background: rgba(139, 155, 142, 0.1);
 }
 
-/* Work info text styling */
-.work-info h3 {
-    color: var(--text-primary);
-    font-size: 24px;
+/* Work preview info text styling */
+.work-preview-info h3 {
+    color: var(--text-primary) !important;
+    font-size: 20px;
     margin-bottom: 10px;
     font-weight: 400;
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
-.work-info p {
-    color: var(--text-secondary);
+.work-preview-info p {
+    color: var(--text-secondary) !important;
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 20px;
-    text-decoration: none;
+    text-decoration: none !important;
 }
