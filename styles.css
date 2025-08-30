@@ -495,7 +495,7 @@ nav {
     border: 1px solid rgba(139, 155, 142, 0.2);
     border-radius: 15px;
     overflow: hidden;
-    transition: all 0.4s ease;
+    transition: all 2.0s ease;
     cursor: pointer;
 }
 
